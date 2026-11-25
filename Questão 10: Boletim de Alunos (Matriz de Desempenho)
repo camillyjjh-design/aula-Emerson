@@ -1,0 +1,27 @@
+fun main() {
+    val notasAlunos = Array(3) { DoubleArray(2) }
+    
+    // Preenchendo notas de exemplo (3 alunos, 2 notas cada)
+    notasAlunos[0] = doubleArrayOf(8.5, 7.5) // Aluno 0 -> Média 8.0
+    notasAlunos[1] = doubleArrayOf(5.0, 6.5) // Aluno 1 -> Média 5.75
+    notasAlunos[2] = doubleArrayOf(9.0, 9.5) // Aluno 2 -> Média 9.25
+
+    var somaMediasTurma = 0.0
+
+    for (aluno in notasAlunos.indices) {
+        var somaNotasAluno = 0.0
+        for (nota in notasAlunos[aluno]) {
+            somaNotasAluno += nota
+        }
+
+        val mediaIndividual = somaNotasAluno / notasAlunos[aluno].size
+        somaMediasTurma += mediaIndividual
+
+        val status = if (mediaIndividual >= 7.0) "Aprovado" else "Reprovado"
+        println("Aluno ${aluno + 1} | Média: %.2f | Situação: $status".format(mediaIndividual))
+    }
+
+    val mediaGeralTurma = somaMediasTurma / notasAlunos.size
+    println("-----------------------------------------")
+    println("Média Geral da Turma: %.2f".format(mediaGeralTurma))
+}
