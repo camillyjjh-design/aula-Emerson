@@ -1,1 +1,17 @@
+fun main() {
+    val codigosTransacao = arrayOf("TX100", "TX205", "TX309", "TX412", "TX550")
+    val codigoBuscado = "TX309"
+    var encontrado = false
 
+    for (i in codigosTransacao.indices) {
+        if (codigosTransacao[i] == codigoBuscado) {
+            println("Código $codigoBuscado encontrado na posição (índice): $i")
+            encontrado = true
+            break
+        }
+    }
+
+    if (!encontrado) {
+        println("Código $codigoBuscado não encontrado.")
+    }
+}
