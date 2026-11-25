@@ -1,0 +1,12 @@
+fun main() {
+    val tarefas = arrayOf(
+        "Configurar ambiente Android Studio",
+        "Criar layout da tela principal",
+        "Implementar lógica de carrinho",
+        "Testar aplicativo no emulador"
+    )
+
+    for ((indice, tarefa) in tarefas.withIndex()) {
+        println("${indice + 1}. $tarefa")
+    }
+}
