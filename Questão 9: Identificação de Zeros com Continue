@@ -1,0 +1,23 @@
+fun main() {
+    val matriz = arrayOf(
+        intArrayOf(5, 0, 3),
+        intArrayOf(0, 8, 2),
+        intArrayOf(4, 1, 0)
+    )
+
+    var somaPositivos = 0
+
+    for (i in matriz.indices) {
+        for (j in matriz[i].indices) {
+            val valor = matriz[i][j]
+            if (valor == 0) {
+                continue
+            }
+            if (valor > 0) {
+                somaPositivos += valor
+            }
+        }
+    }
+
+    println("Soma dos valores maiores que zero: $somaPositivos")
+}
